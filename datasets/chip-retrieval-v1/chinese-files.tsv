@@ -1,0 +1,21 @@
+id	domain	file_name	description	review_status	reviewer
+C001	SR需求		脱敏SR需求	TODO	-
+C002	可行性分析		脱敏可行性分析	TODO	-
+C003	设计逻辑需求规格		脱敏设计逻辑需求规格	TODO	-
+C004	集成信息表单		脱敏集成信息表单	TODO	-
+C005	DFT方案		脱敏DFT方案	TODO	-
+C006	物理实现		脱敏物理实现交付说明	TODO	-
+C007	时钟与复位		脱敏时钟与复位设计说明	TODO	-
+C008	中断与Address Map		脱敏中断与地址映射说明	TODO	-
+C009	寄存器与Pinlist		脱敏寄存器与Pinlist说明	TODO	-
+C010	验证方案与Testplan		脱敏验证方案与Testplan	TODO	-
+C011	SR需求		脱敏子系统SR需求	TODO	-
+C012	可行性分析		脱敏子系统可行性分析	TODO	-
+C013	设计逻辑需求规格		脱敏模块设计逻辑需求规格	TODO	-
+C014	集成信息表单		脱敏子系统集成信息表单	TODO	-
+C015	DFT方案		脱敏子系统DFT方案	TODO	-
+C016	物理实现		脱敏子系统物理实现交付说明	TODO	-
+C017	时钟与复位		脱敏子系统时钟与复位设计说明	TODO	-
+C018	中断与Address Map		脱敏子系统中断与地址映射说明	TODO	-
+C019	寄存器与Pinlist		脱敏子系统寄存器与Pinlist说明	TODO	-
+C020	验证方案与Testplan		脱敏子系统验证方案与Testplan	TODO	-
