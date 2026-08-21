@@ -4,6 +4,10 @@
 
 固定数据实际包含6种语言、60个真实GitHub仓库、600题和8775个源文件。其中37个上游空文件没有题目以其为目标。
 
+- [`repositories.tsv`](repositories.tsv)：仓库、语言、Commit、源码数量；
+- [`questions.tsv`](questions.tsv)：完整问题、目标函数、目标Path和标准范围；
+- `repoqa.py`：下载固定源码并校验上述两个文件。
+
 ## 准备与校验
 
 ```bash
@@ -12,6 +16,8 @@ python3 repoqa.py verify
 ```
 
 脚本只使用Python标准库。固定发布包下载到`.work/`并校验SHA-256，不提交或重新分发上游源码。具体系统的评测运行器由被测项目实现。
+
+维护数据版本时才能执行`python3 repoqa.py export`重新生成两个TSV；日常评测不得修改它们。
 
 ## 评测口径
 

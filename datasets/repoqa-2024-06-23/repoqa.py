@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import gzip
 import hashlib
 import json
@@ -16,6 +17,8 @@ ROOT = Path(__file__).resolve().parent
 WORK = ROOT / ".work"
 VERSION = "2024-06-23"
 ARCHIVE = WORK / f"repoqa-{VERSION}.json.gz"
+REPOSITORIES = ROOT / "repositories.tsv"
+QUESTIONS = ROOT / "questions.tsv"
 URL = f"https://github.com/evalplus/repoqa_release/releases/download/{VERSION}/repoqa-{VERSION}.json.gz"
 SHA256 = "c050a2ad90a7df89d9dc1f1c3b3b20683edd20a56293b35fcaae43dec115d681"
 EXPECTED_LANGUAGES = {"python", "cpp", "java", "typescript", "rust", "go"}
@@ -110,20 +113,77 @@ def query_terms(description: str) -> list[str]:
     return terms
 
 
+def manifest_rows(data: dict[str, list[dict]]) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    repositories: list[dict[str, str]] = []
+    questions: list[dict[str, str]] = []
+    for language, language_repositories in data.items():
+        for repository_number, repository in enumerate(language_repositories, 1):
+            repository_id = f"{language}-{repository_number:02d}"
+            repositories.append({
+                "id": repository_id,
+                "language": language,
+                "repository": repository["repo"],
+                "commit_sha": repository["commit_sha"],
+                "entrypoint_path": repository["entrypoint_path"],
+                "topic": repository["topic"],
+                "source_files": str(len(repository["content"])),
+                "questions": str(len(repository["needles"])),
+            })
+            for question_number, needle in enumerate(repository["needles"], 1):
+                questions.append({
+                    "id": f"{repository_id}-{question_number:02d}",
+                    "repository_id": repository_id,
+                    "question": " ".join(needle["description"].split()),
+                    "target_name": needle["name"],
+                    "target_path": needle["path"],
+                    "target_start_line": str(int(needle["start_line"]) + 1),
+                    "target_end_line": str(needle["end_line"]),
+                    "target_start_byte": str(needle["start_byte"]),
+                    "target_end_byte": str(needle["end_byte"]),
+                })
+    return repositories, questions
+
+
+def read_tsv(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        raise ValueError(f"缺少可见数据文件: {path.name}")
+    with path.open(encoding="utf-8", newline="") as handle:
+        return list(csv.DictReader(handle, delimiter="\t"))
+
+
+def verify_manifests(data: dict[str, list[dict]]) -> None:
+    expected_repositories, expected_questions = manifest_rows(data)
+    if read_tsv(REPOSITORIES) != expected_repositories:
+        raise ValueError("repositories.tsv与固定发布包不一致")
+    if read_tsv(QUESTIONS) != expected_questions:
+        raise ValueError("questions.tsv与固定发布包不一致")
+
+
+def write_tsv(path: Path, rows: list[dict[str, str]]) -> None:
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=rows[0], delimiter="\t", lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="准备和验证RepoQA固定数据集")
-    parser.add_argument("command", choices=("prepare", "verify"))
+    parser.add_argument("command", choices=("prepare", "verify", "export"))
     args = parser.parse_args()
     if args.command == "prepare":
         download()
         data = load_data()
+        verify_manifests(data)
         print(f"RepoQA {VERSION}已准备: {len(data)}种语言/{EXPECTED_REPOSITORIES}仓库/{EXPECTED_QUESTIONS}题")
     elif args.command == "verify":
-        load_data()
+        data = load_data()
+        verify_manifests(data)
         print(f"RepoQA {VERSION}校验通过")
     else:
-        load_data()
-        print(f"RepoQA {VERSION}校验通过")
+        repositories, questions = manifest_rows(load_data())
+        write_tsv(REPOSITORIES, repositories)
+        write_tsv(QUESTIONS, questions)
+        print(f"已导出{len(repositories)}个仓库和{len(questions)}道题")
 
 
 if __name__ == "__main__":

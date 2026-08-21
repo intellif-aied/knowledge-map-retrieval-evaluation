@@ -1,0 +1,61 @@
+id	language	repository	commit_sha	entrypoint_path	topic	source_files	questions
+python-01	python	psf/black	f03ee113c9f3dfeb477f2d4247bfb7de2e5f465c	src/black	formatter	28	10
+python-02	python	python-poetry/poetry	21ffd99274d299bd6d2b7b0cdd7ba273fdd941be	src/poetry	package-manager	183	10
+python-03	python	locustio/locust	6241e9cf0a5c296da98abfaeb9d66d0ad1db2390	locust	testing	64	10
+python-04	python	pyg-team/pytorch_geometric	af0f5f44d4dfa8accd898df3e8523d06b67940b0	torch_geometric	deep-learning	598	10
+python-05	python	openai/openai-python	e41abf7b7dbc1e744d167f748e55d4dedfc0dca7	src/openai	api	189	10
+python-06	python	mlc-ai/mlc-llm	068d5ea9ca556f2f7a9603537b4f966da12b11f6	mlc_llm	deep-learning-deployment	49	10
+python-07	python	reactive-python/reactpy	4307a09dfa75e6c1b10a285e5ae4bdf0323cd018	src/py/reactpy/reactpy	frontend	47	10
+python-08	python	marshmallow-code/marshmallow	b8149cec77d16357d11b08f86de3b13e6fe02fa0	src/marshmallow	schema	13	10
+python-09	python	ethereum/web3.py	257f464801d11431bf09132fb30bbeeb5937542e	web3	web3	149	10
+python-10	python	Ciphey/Ciphey	5dfbe9330070d4aefc997e5d2648155a136a3757	ciphey	cryptography	74	10
+cpp-01	cpp	apache/logging-log4cxx	502f5711809e7f48c215164e374a5df62821ed52	src/main/cpp	logging	156	10
+cpp-02	cpp	skypjack/uvw	ba10b27646035594fc1dd9525dede8573b71a7d7	src	network	54	10
+cpp-03	cpp	ClickHouse/clickhouse-cpp	0fb483543b313a0979b4dbd130f834352a034ba8	clickhouse	database	75	10
+cpp-04	cpp	polybar/polybar	11b522c313f7b2b0a10063721ec8b0bf544de6f4	src	developer-tool	97	10
+cpp-05	cpp	drogonframework/drogon	294035beb96f6d474d501c210a1b403b0b0dedb6	lib/src	web-framework	96	10
+cpp-06	cpp	sass/node-sass	6081731aac89ce4612fe4839d4c6329539c0d8e1	src	css-compiler	149	10
+cpp-07	cpp	ml-explore/mlx	91eba8e4856ba9a629408e18a9d0c1e79a22dab0	mlx	machine-learning	150	10
+cpp-08	cpp	scylladb/seastar	b74a027c819ee5b9bfcee4f32edf8f37017bba12	src	network	100	10
+cpp-09	cpp	WasmEdge/WasmEdge	a5e6f2d011776a1d997586b6e9af0ec01efa3642	lib	wasm	89	10
+cpp-10	cpp	oatpp/oatpp	17ef2a7f6c8a932498799b2a5ae5aab2869975c7	src/oatpp	web-framework	297	10
+java-01	java	google/gson	ee61e3f020351f0498dd3ff8f8386b96454a4dfe	gson/src/main/java	developer-tool	84	10
+java-02	java	square/retrofit	10014c2bb7bd5fd24cf6b5b680e6917ab9a7767b	retrofit/src/main/java	web-client	56	10
+java-03	java	karatelabs/karate	a378ba4f9e5af11eca1794d0bd55c428c8491bd8	karate-core/src/main/java	testing	206	10
+java-04	java	Password4j/password4j	ded2c066d53df8dfaa8892a2868e04c7af655775	src/main/java	cryptography	29	10
+java-05	java	GoogleContainerTools/jib	2e9561664792f4b13f0db741ca94c996cbece949	jib-core/src/main/java	build-tool	164	10
+java-06	java	microsoft/gctoolkit	1476fc128465991f2c531645c780d3ed7c865f2c	parser/src/main/java	log-parser	59	10
+java-07	java	palantir/palantir-java-format	b3ef776d8fd7be6e5a53319f7f4a40b7ee0793a4	palantir-java-format/src/main/java	formatter	65	10
+java-08	java	microsoft/mssql-jdbc	eae6d7b33571c92029169b33378b2405e8df448a	src/main/java	database	170	10
+java-09	java	google/conscrypt	74c3c1ab7fecf9e50097a77dcac6ff2c7afd2ccf	common/src/main/java	security	151	10
+java-10	java	apache/flink-ml	f08f2756316c9fbd7fb7b7e39d140bfd3d959b2a	flink-ml-core/src/main/java	machine-learning	48	10
+typescript-01	typescript	xenova/transformers.js	642743136efa3a481b2b96d3c2c550085540d844	src	machine-learning	16	10
+typescript-02	typescript	expressjs/express	815f799310a5627c000d4a5156c1c958e4947b4c	lib	web-server	11	10
+typescript-03	typescript	axios/axios	751133eb9ed794c6f6634c52f4fe116e33bf5f09	lib	web-client	56	10
+typescript-04	typescript	date-fns/date-fns	5c1adb5369805ff552737bf8017dbe07f559b0c6	src	time-library	1342	10
+typescript-05	typescript	langchain-ai/langchainjs	1f4a4498b66af5910d02dd4b9d68d99aa1350548	langchain/src	machine-learning	742	10
+typescript-06	typescript	cheeriojs/cheerio	d0b3c2f6b57cd1f835741175d463963266be0eef	src	frontend	33	10
+typescript-07	typescript	openai/openai-node	018ac718ccf6a96798ef8f91906b3b652aa50919	src	api	77	10
+typescript-08	typescript	umami-software/umami	be7f69fd5d3d711ba650a21013b73c7e17125f52	src	analytics	160	10
+typescript-09	typescript	mrdoob/three.js	df4fb14945c896fdf628981dde31b31ef7e2e0cc	src	3d	374	10
+typescript-10	typescript	firebase/firebase-admin-node	67151e620fbb7bdfc2a017e9a35d51eca035d824	src	baas	106	10
+rust-01	rust	rust-bakery/nom	e87c7da9fa2ddb943306369f6c6d9e914256edbc	src	parser	28	10
+rust-02	rust	helix-editor/helix	e69292e5eb7b0f727fefa19cffec910718af31b3	helix-core/src	code-editor	34	10
+rust-03	rust	rust-lang/cargo	5da28587846d6cb2694e5bb1db1b5ca327285bf7	src	package-manager	210	10
+rust-04	rust	cloudflare/pingora	acee67f87020ef41267fe475bcc5cbed44782a06	pingora-core/src	networking	57	10
+rust-05	rust	huggingface/candle	33c9b6655459bd1086574cef9ba8f2e72a8804c8	candle-core/src	machine-learning	56	10
+rust-06	rust	seanmonstar/warp	ce8114b50cadedac089d496235fe9d18596f944e	src	web-server	46	10
+rust-07	rust	serde-rs/serde	6e38afff498d592af4ccac4cb669a86fc789207f	serde/src	serialization	19	10
+rust-08	rust	tokio-rs/tracing	908cc432a5994f6e17c8f36e13c217dc40085704	tracing-core/src	application-analysis	11	10
+rust-09	rust	AFLplusplus/LibAFL	527b892c1ddcc83207faaa71591e7f33a1a806a7	libafl/src	fuzzing	111	10
+rust-10	rust	alacritty/alacritty	d4f2f8577f763df059653dfab733dfe6ddc06913	alacritty/src	terminal-emulator	52	10
+go-01	go	junegunn/fzf	e352b6887849cb6c3c8ae1d98ed357f94273e90a	src	command-line tool	65	10
+go-02	go	fatedier/frp	eaae212d2d1b17360754afd9432c21640f15c832	pkg	reverse proxy	108	10
+go-03	go	caddyserver/caddy	4d6370bf92de163a53aec9081c5d5ae6614597a0	modules	web server	176	10
+go-04	go	nsqio/nsq	2127c0a1ce50a66d61d78496033b15ef5cb5e250	internal	messaging platform	42	10
+go-05	go	projectdiscovery/nuclei	3dfcec0a36dbf5ebc529ce0478076279cb975b71	pkg	vulnerability scanner	480	10
+go-06	go	jesseduffield/lazydocker	80af149b023f4d9be68a643412183d389d73368d	pkg	docker management	83	10
+go-07	go	zeromicro/go-zero	b337ae36e50092488c1899069f860007447fa17c	core	cloud-native microservices	448	10
+go-08	go	schollz/croc	d81116382fcb9dddb79b02ed4b0da99e7aecb2ab	src	data transfer	17	10
+go-09	go	iawia002/lux	59f517bb7138acd4fffcced4560197e83a592fc2	extractors	video download	96	10
+go-10	go	lima-vm/lima	5f6bfc951f5df6f8d21e3e2ccf9693146216ef4d	cmd	Linux virtual machines	30	10

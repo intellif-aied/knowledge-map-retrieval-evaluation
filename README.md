@@ -11,19 +11,17 @@
 
 两套结果分别报告，不能合并成一个“准确率”。前者接近当前产品场景，后者检查对陌生仓库的泛化能力。
 
-## 准备与校验
+## 克隆后开始
 
-仅需 Python 3 标准库：
+机器只需Git、Python 3和网络访问。克隆后执行一条命令：
 
 ```bash
-python3 datasets/chip-retrieval-v1/dataset.py prepare
-python3 datasets/chip-retrieval-v1/dataset.py verify --public-only
-
-python3 datasets/repoqa-2024-06-23/repoqa.py prepare
-python3 datasets/repoqa-2024-06-23/repoqa.py verify
+./prepare.sh
 ```
 
-下载内容统一保存到各数据集的 `.work/`，不会提交 Git。固定 URL、Revision 和 SHA-256 均由脚本校验。
+脚本下载两套固定公开语料并完成题目、目标Path、目标范围和SHA-256校验。下载内容统一保存在各数据集的`.work/`，不会提交Git。执行成功后即可把数据交给被测检索系统。
+
+RepoQA的[`repositories.tsv`](datasets/repoqa-2024-06-23/repositories.tsv)和[`questions.tsv`](datasets/repoqa-2024-06-23/questions.tsv)直接纳入Git，可以在网页中浏览、审查和比较版本。
 
 ## 数据边界
 
